@@ -1,12 +1,12 @@
 #include <stdio.h>
-
+#define MAX 5
 void restart(int m,char matrica[m][m])
 {
 	int k,l;
 	for(k=0;k<m;++k)
 	{
 		for(l=0;l<m;++l)
-		 matrica[k][l] = '0';
+		 matrica[k][l] = '.';
 	}
 }
 
@@ -15,8 +15,17 @@ void main()
 	int i,j,n,k;
 	int a,b;
 	int broj = 0;
-	printf("Unesite velicinu kvadratne matrice ");
-	scanf("%d",&n);
+	while(1)
+	{
+		printf("Unesite velicinu kvadratne matrice(max=%d): ",MAX);
+		scanf("%d",&n);
+		if(n<=MAX)
+			break;
+		else if(n<=0)
+			printf("Velicina matrice mora biti prirodan broj.\n",MAX);
+		else
+			printf("Maksimalna vrednost je %d.\n",MAX);
+	}
 	char niz[n][n];
 	char niz1[n][n];
 	printf("\nVizuelno predstavljanje matrice:\n\n");
@@ -111,7 +120,6 @@ void main()
 		}
 		printf("\n");
 	}
-	int Do_Not_Close;
 	printf("\n");
-	scanf("%d",&Do_Not_Close);	
+	getchar();getchar();
 }
