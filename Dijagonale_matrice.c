@@ -10,7 +10,7 @@ void restart(int m,char matrica[m][m])
 	}
 }
 
-void main()
+int main()
 {
 	int i,j,n,k,a,b;
 	
@@ -129,4 +129,5 @@ void main()
 	
 	printf("\n");
 	getchar();getchar();
+	return 0;
 }
