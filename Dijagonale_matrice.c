@@ -12,9 +12,9 @@ void restart(int m,char matrica[m][m])
 
 void main()
 {
-	int i,j,n,k;
-	int a,b;
-	int broj = 0;
+	int i,j,n,k,a,b;
+	
+	//Unos velicine matrice
 	while(1)
 	{
 		printf("Unesite velicinu kvadratne matrice(max=%d): ",MAX);
@@ -26,8 +26,9 @@ void main()
 		else
 			printf("Maksimalna vrednost je %d.\n",MAX);
 	}
-	char niz[n][n];
-	char niz1[n][n];
+	
+	char niz[n][n], niz1[n][n];
+	
 	printf("\nVizuelno predstavljanje matrice:\n\n");
 	for(i=0;i<n;++i)
 	{
@@ -35,13 +36,13 @@ void main()
 		for(j=0;j<n;++j)
 		{
 			niz1[i][j] = '0';
-			niz[i][j] = 'a' + broj;
+			niz[i][j] = 'a' + i*n+j;
 			printf("%c ",niz[i][j]);
-			++broj;
 		}
 	   printf("\n");	 
 	}
 	restart(n,niz1);
+	
 	printf("\nGlavna dijagonala:\n\n");
 	for(i=0;i<n;++i)
 	{
@@ -55,6 +56,7 @@ void main()
 		printf("\n");
 	}
 	restart(n,niz1);
+	
 	printf("\nSporedna dijagonala:\n\n");
 	for(i=0;i<n;++i)
 	{
@@ -68,6 +70,7 @@ void main()
 		printf("\n");
 	}
 	restart(n,niz1);
+	
 	printf("\nPovrsina iznad glavne dijagonale :\n\n");
 	for(i=0;i<n;++i)
 	{
@@ -82,6 +85,7 @@ void main()
 	    printf("\n");	
 	}
 	restart(n,niz1);
+	
 	printf("\nPovrsina ispod glavne dijagonale :\n\n");
 	for(i=0;i<n;++i)
 	{
@@ -95,6 +99,7 @@ void main()
 		printf("\n");
 	}
 	restart(n,niz1);
+	
 	printf("\nPovrsina iznad sporedne dijagonale :\n\n");
 	for(i=0;i<n;++i)
 	{
@@ -108,6 +113,7 @@ void main()
 		printf("\n");
 	}
 	restart(n,niz1);
+	
 	printf("\nPovrsina ispod sporedne dijagonale :\n\n");
 	for(i=0;i<n;++i)
 	{
@@ -120,6 +126,7 @@ void main()
 		}
 		printf("\n");
 	}
+	
 	printf("\n");
 	getchar();getchar();
 }
